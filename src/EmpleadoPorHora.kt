@@ -1,9 +1,14 @@
 class EmpleadoPorHora(
-    override val nombre: String,
-    override val id: String,
-    val horasTrabajadasAlMes: Double,
-    val tarifaPorHora: Double
-): Empleado() {
-
+    nombre: String,
+    id: String,
+    private val horasTrabajadasAlMes: Double,
+    private val tarifaPorHora: Double
+): Empleado(nombre, id) {
+    init {
+        require(horasTrabajadasAlMes > 0){"horasTrabajadasAlMes debe ser positiva (>0)"}
+        require(tarifaPorHora > 0){"tarifaPorHora debe ser positiva (>0)"}
+    }
     override fun calcularSalario(): Double = horasTrabajadasAlMes*tarifaPorHora
+
+
 }

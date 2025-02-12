@@ -1,16 +1,8 @@
-fun String.aniadirCeros(numEnteros: Int): String{
-    var nuevoValor = this
-    if (this.length == numEnteros) return this
-    for(i in 1..numEnteros-this.length){
-        nuevoValor = "0$nuevoValor"
-    }
-    return nuevoValor
-}
-
-
 fun main(){
     val departamento = Departamento("Oficina")
-    departamento.agregarEmpleado(EmpleadoFijo("Felipe", "1", 100.0, 45))
-    val hola = 2.6466
-    println("%2.".format(hola))
+    departamento.agregarEmpleado(EmpleadoFijo("Felipe", "01", 100.0, 45))
+    departamento.agregarEmpleado(EmpleadoFijo("Luis", "34", 2100.0, 2))
+    departamento.agregarEmpleado(EmpleadoFijo("No", "1201", 10000.0, 1))
+
+    departamento.mostrarInfoEmpleados()
 }
