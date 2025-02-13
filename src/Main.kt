@@ -5,4 +5,6 @@ fun main(){
     departamento.agregarEmpleado(EmpleadoFijo("No", "1201", 10000.0, 1))
 
     departamento.mostrarInfoEmpleados()
+
+    println(("%.2f".format(12.079)))
 }

@@ -1,4 +1,4 @@
-abstract class Empleado(val nombre: String, val id: String) {
+abstract class Empleado(private val nombre: String,private val id: String) {
 
 
     init {
@@ -8,4 +8,8 @@ abstract class Empleado(val nombre: String, val id: String) {
     }
     abstract fun calcularSalario(): Double
 
+    override fun toString(): String {
+        val numEnteros = 4; val numDecimales = 2
+        return "${this.nombre} con ID-${"%0${numEnteros}d".format(this.id.toInt())} tiene un salario de ${"%.${numDecimales}f".format(this.calcularSalario())} € al mes."
+    }
 }
